@@ -1,0 +1,93 @@
+ a = {
+saijal: "designer"
+}
+
+
+a.saijal
+
+b  = ["saijal","pavika","aayush","akhilesh"]
+
+
+b[1]
+
+b.map(lisIitem)
+
+
+jsx = javascript syntax extension
+
+
+
+
+
+
+6 lines which is to be 50 times = 300lines
+
+
+we write those 6 lines of code in a wrapper called function which is given a name..
+
+
+
+function <function name> () {
+   <your code here>
+   return <xyz>
+   <some more code>
+}
+
+
+
+
+function bhalu(){
+	sada
+	sadad
+	Sadaf
+	dsadas
+	dfdsfds
+	dfdsfcds
+	addscfdbvg
+	fgbgrb
+}
+
+
+bhalu()
+
+
+
+return in a function.
+
+ function without anyname = python - anonymous function, js - arrow function
+
+
+
+arrow function: 
+
+
+
+ () => {}
+
+
+props = we can transfer data from one component to other
+
+props= {
+	contact {
+		id: 1,
+		name: "Saijal"
+		email: "Saijal@gmail.com"
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
