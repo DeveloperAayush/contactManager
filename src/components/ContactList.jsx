@@ -2,35 +2,11 @@ import React from 'react'
 import ContactCard from './ContactCard';
 import { Link } from 'react-router-dom';
 
-export default function ContactList() {
-
-    const contacts = [
-      {
-        id: 1,
-        name: "Saijal",
-        email: "Saijal@gmail.com",
-      },
-      {
-        id: 2,
-        name: "Pavika",
-        email: "Pavika@gmail.com",
-      },
-      {
-        id: 3,
-        name: "Aayush",
-        email: "Aayush@gmail.com",
-      },
-      {
-        id: 4,
-        name: "Akhilesh",
-        email: "Akhilesh@gmail.com",
-      },
-    ];
-
-
+export default function ContactList({contacts, deleteContact}) {
+  
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center mb-12">
       <div className="my-2 mx-4 flex items-center justify-center">
         <Link to="/add">
           <button className="bg-blue-600 py-1.5 px-3 text-white rounded-lg font-bold">
@@ -43,7 +19,7 @@ export default function ContactList() {
       </div>
       <div className="container w-1/2 mt-4">
         {contacts.map((contact) => {
-          return <ContactCard key={contact.id} contact={contact} />;
+          return <ContactCard key={contact.id} contact={contact} deleteContact={deleteContact} />;
         })}
       </div>
     </div>

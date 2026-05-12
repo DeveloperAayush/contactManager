@@ -1,18 +1,25 @@
 import React, { useState } from 'react'
+import { useNavigate  } from 'react-router-dom';
 
-export default function AddContact() {
+export default function AddContact(props) {
 
 const [name, setname] = useState("");
 const [email, setemail] = useState("");
 
+const navigate = useNavigate();
+
+
 const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // if(name === "" || email === "") return alert("Please fill all the fields");
-
-    localStorage.setItem("contacts", JSON.stringify({ name, email }));
-    setemail("");
+    // Add contact logic here
+    const newContact = {
+        name,
+        email
+    };
+    props.addContact(newContact);
     setname("");
+    setemail("");
+    navigate("/");
 }
 
   return (
