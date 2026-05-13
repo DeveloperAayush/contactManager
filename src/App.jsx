@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ContactList from "./components/ContactList";
 import AddContact from "./components/AddContact";
+import EditContact from "./components/EditContact";
 
 function App() {
   const [contacts, setContacts] = useState([]);
@@ -20,6 +21,15 @@ function App() {
     setContacts(newContacts);
     localStorage.setItem("contacts", JSON.stringify(newContacts));
   };
+
+  const editContact = (updatedContact, id) => {
+
+    const newContacts = contacts.map((contact) =>
+      contact.id === id ? updatedContact : contact
+    );
+    setContacts(newContacts);
+    localStorage.setItem("contacts", JSON.stringify(newContacts));
+  }
 
   const deleteContact = (id) => {
     const newContacts = contacts.filter((contact) => contact.id !== id);
@@ -41,8 +51,23 @@ function App() {
       <div>
         <Header />
         <Routes>
-          <Route path="/" element={<ContactList contacts={contacts} deleteContact={deleteContact} />} />
+          <Route
+            path="/"
+            element={
+              <ContactList contacts={contacts} deleteContact={deleteContact} />
+            }
+          />
           <Route path="/add" element={<AddContact addContact={addContact} />} />
+          <Route
+            path="/edit/:id"
+            element={
+              <EditContact
+                contacts={contacts}
+                setContacts={setContacts}
+                editContact={editContact}
+              />
+            }
+          />
         </Routes>
         <Footer />
       </div>

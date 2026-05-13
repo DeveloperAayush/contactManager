@@ -18,9 +18,9 @@ export default function ContactList({contacts, deleteContact}) {
         <h2 className="text-2xl font-bold">Contact List</h2>
       </div>
       <div className="container w-1/2 mt-4">
-        {contacts.map((contact) => {
+        {contacts.length > 0 ? (contacts.map((contact) => {
           return <ContactCard key={contact.id} contact={contact} deleteContact={deleteContact} />;
-        })}
+        })) : (<div className="text-center text-gray-500">No contacts found. Please add some contacts.</div>)}
       </div>
     </div>
   );

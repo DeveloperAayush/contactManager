@@ -77,6 +77,11 @@ props= {
 
 
 
+ternary operator = (?)
+
+condition ? {} : {}
+
+
 
 
 
