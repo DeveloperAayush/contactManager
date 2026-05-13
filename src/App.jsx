@@ -1,6 +1,9 @@
 import react, { useEffect, useState } from "react";
 import "./App.css";
 
+import { v4 as uuid } from "uuid";
+
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -14,7 +17,7 @@ function App() {
 
   const addContact = (contact) => {
     const newContact = {
-      id: contacts.length + 1,
+      id: uuid(),
       ...contact,
     };
     const newContacts = [...contacts, newContact];

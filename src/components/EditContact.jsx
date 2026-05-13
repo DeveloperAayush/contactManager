@@ -7,7 +7,7 @@ export default function EditContact({contacts, editContact}) {
     const navigate = useNavigate();
 
 
-    const contactToEdit = contacts.find(contact => contact.id === parseInt(id));
+    const contactToEdit = contacts.find(contact => contact.id === id);
     const [name, setName] = useState(contactToEdit ? contactToEdit.name : "");
     const [email, setEmail] = useState(contactToEdit ? contactToEdit.email : "");
 
@@ -17,11 +17,11 @@ export default function EditContact({contacts, editContact}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         const updatedContact = {
-            id: parseInt(id),
+            id: id,
             name: name,
             email: email
         };
-        editContact(updatedContact, parseInt(id));
+        editContact(updatedContact, id);
         navigate("/");
     }
 
